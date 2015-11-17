@@ -1,5 +1,4 @@
 // Announcements = new Mongo.Collection("announcements");
-
 Meteor.startup(function () {
 	console.log("Successful startup!");
 	// Meteor.publish("announcements", function() {
