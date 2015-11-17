@@ -18,6 +18,10 @@ Router.route('/', function() {
   this.render('landing');
 });
 
+Router.route('/about', function() {
+  this.render('about');
+});
+
 Router.configure({
   layoutTemplate: 'ApplicationLayout'
 });
