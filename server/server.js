@@ -3,12 +3,13 @@ Meteor.startup(function () {
   Meteor.publish("events", function() {
     return Announcements.find();
   });
+  console.log(Announcements.find({}).fetch());
 });
 
 Meteor.methods({
   getAnnouncements: function() {
-    var eventList = Events.find({}).fetch();
-    return eventList;
+    var annoList = Announcements.find({}).fetch();
+    return annoList;
   },
 });
 
