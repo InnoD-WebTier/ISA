@@ -5,6 +5,15 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 iron:router
+fortawesome:fontawesome
+twbs:bootstrap
+orionjs:core
+orionjs:bootstrap
+orionjs:filesystem
+orionjs:file-attribute
+orionjs:summernote
+orionjs:relationships
+orionjs:image-attribute
+orionjs:s3
+grigio:babel
