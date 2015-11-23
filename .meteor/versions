@@ -14,6 +14,7 @@ boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
 coffeescript@1.0.6
+cosmos:browserify@0.4.0
 dburles:collection-helpers@1.0.3
 ddp@1.1.0
 deps@1.0.7
@@ -76,6 +77,10 @@ orionjs:relationships@1.2.0
 orionjs:s3@1.2.0
 orionjs:summernote@1.2.0
 random@1.0.3
+react-runtime@0.13.3_6
+react-runtime-dev@0.13.3_5
+react-runtime-prod@0.13.3_4
+react-template-helper@0.1.5
 reactive-dict@1.1.0
 reactive-var@1.0.5
 reload@1.1.3
