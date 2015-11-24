@@ -1,0 +1,16 @@
+*, *:before, *:after {
+    @include box-sizing(border-box);
+}
+
+.content {
+    padding-top: 60px;
+}
+
+.page-container {
+    padding: 0 10% 0 10%;
+    .title {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+}
