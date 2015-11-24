@@ -13,8 +13,21 @@ a{
 h1{
 	font-weight:100;
 }
+
+#navbar a {
+	border-bottom: 4px solid transparent;
+}
+
+#navbar a:hover {
+	border-bottom: 4px solid #000;
+	background:none;
+	font-weight:300;
+	color:#000;
+}
+
+
 #home {
-	background-image: url("homebg3.png");
+	background-image: url("homebg7.png");
 	/*background-color: #000;*/
 	width:100%;
 	height:500px;
@@ -50,3 +63,5 @@ h1{
 	/*height:400px;*/
 	text-align:right;
 }
+
+
