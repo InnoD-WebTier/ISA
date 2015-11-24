@@ -35,8 +35,8 @@ Meteor.methods({
 	},
 	announcementFind: function() {
 		console.log('adsfgdhfgjh');
-		console.log(Announcements.find({}));
-		return Announcements.find({});
+		console.log(Announcements.find({}).fetch());
+		return Announcements.find({}).fetch();
 	}
 });
 
