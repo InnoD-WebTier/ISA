@@ -1,0 +1,16 @@
+#navbar {
+    ul {
+        li {
+            text-align: center;
+            outline: none;
+        }
+    }
+    a {
+        width: 100px;
+        &:hover {
+            background: none;
+            font-weight: 300;
+            color: #000;
+        }
+    }
+}
