@@ -1,6 +1,5 @@
-.about-container {
-  max-width: 800px;
-  margin: 0 auto;
+.about-page {
+  // max-width: 800px;
   position: relative;
 }
 
@@ -25,6 +24,7 @@
   }
   .member-description {
     p {
+      width: 150px;
       margin: 0;
     }
   }
