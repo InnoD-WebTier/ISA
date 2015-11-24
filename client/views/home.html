@@ -12,9 +12,11 @@
             <div class="col-md-8">
                 <h1>ANNOUNCEMENTS</h1>
                 <hr>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </p>
+                <ul id='annoucements'>
+					{{#each announcements}}
+						{{> post}}
+					{{/each}}
+				</ul>
             </div>
             </div>
             <img src="/img/home/elephant.png" id="elephant">
@@ -30,4 +32,16 @@
     </div>
     <img src="/img/home/elephant2.png" id="elephant2">
 </div>
+
+</template>
+
+<template name='post'>
+	<li>
+		<div class="date">
+			{{time}}
+		</div>
+		<div class="main">
+			{{entry}}
+		</div>
+	</li>
 </template>
