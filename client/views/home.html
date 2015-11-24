@@ -1,45 +1,36 @@
 <template name="home">
-<div id="home">
-	<div class="col-md-offset-3 col-md-6">
-		<div class = "title">
-			INDIAN STUDENT ASSOCIATION
-		</div>
-	</div>
-</div>
-<div id="updates">
-	<div class= "container">
-		<div class="container">
-			<div class="col-md-8">
-				<h1>ANNOUNCEMENTS</h1>
-				<ul id='annoucements'>
+    <div id="home">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="title">
+                INDIAN STUDENT ASSOCIATION
+            </div>
+        </div>
+    </div>
+    <div id="updates">
+        <div class= "container">
+            <div class="container">
+            <div class="col-md-8">
+                <h1>ANNOUNCEMENTS</h1>
+                <hr>
+                <ul id='annoucements'>
 					{{#each announcements}}
 						{{> post}}
 					{{/each}}
 				</ul>
-				<!-- <hr>
-				<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-				</p> -->
-
-			</div>
-			<!-- <div class= "col-md-4"> -->
-				<!-- <img src="elephant.png" style="width:304px;height:228px;"> -->
-				
-
-			<!-- </div> -->
-		</div>
-		<img src="elephant.png" id="elephant">
-	</div>
-</div>
+            </div>
+            </div>
+            <img src="/img/home/elephant.png" id="elephant">
+        </div>
+    </div>
 <div id="intro">
-	<div class= "container">
-		<h1>WHAT IS ISA?</h1>
-		<hr>
-		<p>
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-		</p>
-	</div>
-	<img src="elephant2.png" id="elephant2">
+    <div class= "container">
+        <h1>WHAT IS ISA?</h1>
+        <hr>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        </p>
+    </div>
+    <img src="/img/home/elephant2.png" id="elephant2">
 </div>
 
 </template>

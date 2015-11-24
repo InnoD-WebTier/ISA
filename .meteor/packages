@@ -27,5 +27,13 @@ random
 ejson
 spacebars
 check
-orionjs:summernote
 autopublish
+meteor-platform
+orionjs:filesystem
+orionjs:file-attribute
+orionjs:summernote
+orionjs:relationships
+orionjs:image-attribute
+orionjs:s3
+fourseven:scss
+react-template-helper
