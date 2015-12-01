@@ -1,0 +1,22 @@
+.events_container {
+	width: 70%;
+	margin: 0 auto;
+	.title {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.image_container {
+		img {
+			width: 49.5%;
+			display: inline-block;
+			margin-bottom: 1%;
+		}
+		img:nth-child(odd) {
+			margin-right: 0.5%
+		}
+		margin-bottom: 30px;
+	}
+	p {
+		margin-bottom: 15px;
+	}
+}
