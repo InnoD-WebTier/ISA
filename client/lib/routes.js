@@ -22,6 +22,10 @@ Router.route('/blog', function() {
     }
 });
 
+Router.route('/diwali', function() {
+	this.render('diwali');
+});
+
 Router.route('/events', function() {
     this.render('events');
 }, {
@@ -36,6 +40,14 @@ Router.route('/gallery', function() {
     onAfterAction: function() {
         return setTitle('Gallery');
     }
+});
+
+Router.route('/holi', function() {
+	this.render('holi');
+});
+
+Router.route('/raasgarba', function() {
+	this.render('raasgarba');
 });
 
 Router.configure({
