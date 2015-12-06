@@ -150,6 +150,8 @@ Pictures.attachSchema(new SimpleSchema ({
 		type: String,
 		optional: true,
 		label: 'Album Title',
+		// double check on what "allowedValues" actually is
+		// not sure this is how it's supposed to work
 		allowedValues: function() {
 			var docs = Albums.find({}).fetch();
 			var titles = [];
