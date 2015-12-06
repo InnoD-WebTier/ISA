@@ -32,6 +32,12 @@ Announcements = new orion.collection('announcements', {
 	      },{ 
 	        data: "author", 
 	        title: "Author" 
+	      },{
+	      	data: "date",
+	      	title: "Event Date"
+	      },{
+	      	data: "location",
+	      	title: "Event Location"
 	      },
 	      orion.attributeColumn('createdAt', 'time', 'Submitted')
 	    ]
@@ -53,6 +59,7 @@ Pictures = new orion.collection('pictures', {
 				data: "albumTitle",
 				title: "Album Title"
 			},
+			orion.attributeColumn('image', 'image', 'Image'),
 			orion.attributeColumn('createdAt', 'time', 'Submitted')
 		]
 	}
@@ -74,7 +81,6 @@ Meteor.methods({
 		return announcementId;
 	},
 	announcementFind: function() {
-		console.log('adsfgdhfgjh');
 		console.log(Announcements.find({}).fetch());
 		return Announcements.find({}).fetch();
 	}
@@ -109,22 +115,30 @@ Announcements.attachSchema(new SimpleSchema ({
 		optional: false,
 		label: 'Author'
 	},
+	date: {
+		type: String,
+		optional: false,
+		label: 'Event Date'
+	},
+	location: {
+		type: String,
+		optional: false,
+		label: "Event location"
+	},
 	entry: orion.attribute('summernote', {
 		label: 'Entry'
 	}),
 	time: orion.attribute('createdAt')
 }));
 
-function getAlbumTitles() {
-	var docs = Albums.find({}).fetch();
-	var titles = [];
-	for (var i = 0; i < docs.length; i++) {
-		titles[i] = (docs[i].title);
-	}
-	return titles;
-}
-albumTitles = getAlbumTitles();
-console.log(albumTitles);
+// function getAlbumTitles() {
+// 	var docs = Albums.find({}).fetch();
+// 	var titles = [];
+// 	for (var i = 0; i < docs.length; i++) {
+// 		titles[i] = (docs[i].title);
+// 	}
+// 	return titles;
+// }
 
 Pictures.attachSchema(new SimpleSchema ({
 	title: {
@@ -134,9 +148,38 @@ Pictures.attachSchema(new SimpleSchema ({
 	},
 	albumTitle: {
 		type: String,
-		optional: false,
+		optional: true,
 		label: 'Album Title',
-		allowedValues: albumTitles
+		allowedValues: function() {
+			var docs = Albums.find({}).fetch();
+			var titles = [];
+			for (var i = 0; i < docs.length; i++) {
+				titles[i] = docs[i].title;
+			}
+			console.log("this is running and returning " + titles[0]);
+			return titles;
+		}()
 	},
+	image: orion.attribute('image', {
+		label: 'Image',
+		optional: true
+	}),
 	time: orion.attribute('createdAt')
 }));
+
+Pictures.allow({
+  update: function(userId, post) { return ownsDocument(userId, post); },
+  remove: function(userId, post) { return ownsDocument(userId, post); },
+});
+
+Announcements.allow({
+  update: function(userId, post) { return ownsDocument(userId, post); },
+  remove: function(userId, post) { return ownsDocument(userId, post); },
+});
+
+Albums.allow({
+  update: function(userId, post) { return ownsDocument(userId, post); },
+  remove: function(userId, post) { return ownsDocument(userId, post); },
+});
+
+

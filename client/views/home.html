@@ -37,11 +37,15 @@
 
 <template name='post'>
 	<li>
-		<div class="date">
-			{{time}}
+        <div class="Etitle">
+            {{title}}
+        </div>
+		<div class="Edate">
+		  {{location}}, {{date}}
 		</div>
-		<div class="main">
+		<div class="Edescription">
 			{{entry}}
 		</div>
 	</li>
+    <br>
 </template>

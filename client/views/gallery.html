@@ -3,5 +3,11 @@
         <div class="title">
             Gallery
         </div>
+
+<!--	Just code to test that image uploading was working correctly. Can delete. -->
+
+        {{#each gallery}}
+        	<img src="{{this.image.url}}">
+        {{/each}}
     </div>
 </template>
