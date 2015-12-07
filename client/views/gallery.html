@@ -3,5 +3,33 @@
         <div class="title">
             Gallery
         </div>
+        <div class="section-container">
+            <div class="section-header">
+                diwali banquet 2013
+                <span class="section-header-info">
+                    click to show photos
+                </span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="section-content">
+                {{ #each diwali }}
+                    <img class="photo-grid" src="{{ this }}">
+                {{ /each }}
+            </div>
+        </div>
+        <div class="section-container">
+            <div class="section-header">
+                raas garba 2013
+                <span class="section-header-info">
+                    click to show photos
+                </span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="section-content">
+                {{ #each raasGarba }}
+                    <img class="photo-grid" src="{{ this }}">
+                {{ /each }}
+            </div>
+        </div>
     </div>
 </template>

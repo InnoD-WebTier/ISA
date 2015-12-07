@@ -1,4 +1,7 @@
 // Vendors
+@import "client/stylesheets/sass/vendors/normalize.scss";
+@import "client/stylesheets/sass/vendors/toast.scss";
+@import "client/stylesheets/sass/grid.scss";
 
 // App
 @import "client/stylesheets/sass/mixins.scss";
@@ -9,7 +12,6 @@
 
 // Pages
 @import "client/stylesheets/sass/pages/about.scss";
-
 @import "client/stylesheets/sass/pages/events.scss";
-
 @import "client/stylesheets/sass/pages/home.scss";
+@import "client/stylesheets/sass/pages/gallery.scss";
