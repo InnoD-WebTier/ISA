@@ -56,3 +56,36 @@
         }
     }
 }
+
+@media (max-width: 880px) {
+    .gallery-page {
+        .section-container {
+            .photo-grid {
+                .lightbox-trigger {
+                    .gallery-image {
+                        height: 300px;
+                        background-position: center center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .gallery-page {
+        .section-container {
+            .section-header {
+                font-size: 2rem;
+            }
+            .photo-grid {
+                .lightbox-trigger {
+                    .gallery-image {
+                        height: 190px;
+                        background-position: center center;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -32,7 +32,7 @@ Template.gallery.helpers({
             ]
         },
         {
-            title: 'raas-garba 2013',
+            title: 'raas garba 2013',
             photos: [
                 '/img/gallery/raas-garba/raas_1.jpg',
                 '/img/gallery/raas-garba/raas_2.jpg',
