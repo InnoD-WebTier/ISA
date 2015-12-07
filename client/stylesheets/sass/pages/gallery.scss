@@ -1,18 +1,23 @@
 .gallery-page {
+    margin: 50px 0;
     .section-container {
+        margin: 20px 0;
         .section-header {
             text-transform: uppercase;
+            user-select: none;
             font-size: 3rem;
-            .section-header-info {
-                font-size: 1.5rem;
-                margin: 0 7px;
+            .section-title {
+                display: inline-block;
             }
-            .fa {
-                font-size: 2rem;
+            .arrow {
+                display: inline-block;
+                margin-left: 5px;
             }
         }
         .photo-grid {
             @extend .row;
+            margin: 10px 0;
+            display: none;
             .gallery-image {
                 @extend .col;
                 @extend .col--1-of-4;
