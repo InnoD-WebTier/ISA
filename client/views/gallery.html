@@ -11,9 +11,9 @@
                 </span>
                 <i class="fa fa-caret-down"></i>
             </div>
-            <div class="section-content">
+            <div class="photo-grid">
                 {{ #each diwali }}
-                    <img class="photo-grid" src="{{ this }}">
+                    <div class="gallery-image" style="background-image:url('{{ this }}')"></div>
                 {{ /each }}
             </div>
         </div>
@@ -25,9 +25,9 @@
                 </span>
                 <i class="fa fa-caret-down"></i>
             </div>
-            <div class="section-content">
+            <div class="photo-grid">
                 {{ #each raasGarba }}
-                    <img class="photo-grid" src="{{ this }}">
+                    <div class="gallery-image" style="background-image:url('{{ this }}')"></div>
                 {{ /each }}
             </div>
         </div>

@@ -1,13 +1,27 @@
 .gallery-page {
-    .section-header {
-        text-transform: uppercase;
-        font-size: 3rem;
-        .section-header-info {
-            font-size: 1.5rem;
-            margin: 0 7px;
+    .section-container {
+        .section-header {
+            text-transform: uppercase;
+            font-size: 3rem;
+            .section-header-info {
+                font-size: 1.5rem;
+                margin: 0 7px;
+            }
+            .fa {
+                font-size: 2rem;
+            }
         }
-        .fa {
-            font-size: 2rem;
+        .photo-grid {
+            @extend .row;
+            .gallery-image {
+                @extend .col;
+                @extend .col--1-of-4;
+                height: 190px;
+                margin-bottom: 5px;
+                background-position: center top;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
         }
     }
 }
