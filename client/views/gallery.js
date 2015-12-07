@@ -43,14 +43,15 @@ Template.gallery.helpers({
 Template.gallery.events({
     'click .section-title': function(event) {
         var header = $(event.target).parent();
-        var arrow = header.find('.fa-caret-down');
-        console.log(arrow);
+        var arrow = header.find('.fa-caret-up');
         var photoGrid = header.next();
         console.log(photoGrid);
         if (photoGrid.hasClass('expanded')) {
+            arrow.removeClass('rotated');
             photoGrid.removeClass('expanded');
             photoGrid.slideUp();
         } else {
+            arrow.addClass('rotated');
             photoGrid.addClass('expanded');
             photoGrid.slideDown();
         }

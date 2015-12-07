@@ -6,12 +6,16 @@
             text-transform: uppercase;
             user-select: none;
             font-size: 3rem;
+            cursor: pointer;
             .section-title {
                 display: inline-block;
             }
             .arrow {
                 display: inline-block;
                 margin-left: 5px;
+            }
+            .rotated {
+                transform: rotate(180deg);
             }
         }
         .photo-grid {
@@ -26,6 +30,7 @@
                 background-position: center top;
                 background-repeat: no-repeat;
                 background-size: cover;
+                cursor: pointer;
             }
         }
     }
