@@ -9,16 +9,19 @@
                 <div class="section-title">
                     {{ this.title }}
                 </div>
-                <div class="arrow">
-                    <i class="fa fa-caret-up"></i>
-                </div>
+                <i class="fa fa-caret-up arrow"></i>
             </div>
             <div class="photo-grid">
                 {{ #each this.photos }}
-                    <div class="gallery-image" style="background-image:url('{{ this }}')"></div>
+                    <div class="lightbox-trigger" image="{{ this }}">
+                        <div class="gallery-image" style="background-image:url('{{ this }}')"></div>
+                    </div>
                 {{ /each }}
             </div>
         </div>
         {{ /each }}
+        <div class="lightbox">
+            <img class="lightbox-image" src="{{ imageUrl }}">
+        </div>
     </div>
 </template>

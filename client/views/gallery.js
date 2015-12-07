@@ -1,4 +1,7 @@
 Template.gallery.helpers({
+    imageUrl: function() {
+        return Session.get("imageUrl");
+    },
     events: [
         {
             title: 'diwali banquet 2013',
@@ -48,20 +51,68 @@ Template.gallery.helpers({
     ]
 });
 
+function expandGallery(target) {
+    var header = target.parent();
+    var arrow = header.find('.fa-caret-up');
+    var photoGrid = header.next();
+    if (photoGrid.hasClass('expanded')) {
+        arrow.removeClass('rotated');
+        photoGrid.removeClass('expanded');
+        photoGrid.slideUp();
+    } else {
+        arrow.addClass('rotated');
+        photoGrid.addClass('expanded');
+        photoGrid.slideDown();
+    }
+};
+
+function lightbox(imageSrc) {
+    Session.set("imageUrl", imageSrc);
+    var currentImage = new Image();
+    currentImage.src = imageSrc;
+
+    var imageWidth = currentImage.width;
+    var imageHeight = currentImage.height;
+    var windowHeight = $(window).height() * 0.9;
+    var windowWidth = $(window).width() * 0.9;
+
+    var heightScale = windowHeight / imageHeight;
+    var widthScale = windowWidth / imageWidth;
+
+    if (imageWidth * heightScale < windowWidth) {
+        imageWidth = imageWidth * heightScale;
+        imageHeight = imageHeight * heightScale;
+    } else if (imageHeight * widthScale < windowHeight) {
+        imageWidth = imageWidth * widthScale;
+        imageHeight = imageHeight * widthScale;
+    }
+
+    var offsetTop = ($(window).height() - imageHeight) / 2;
+    var offsetLeft = ($(window).width() - imageWidth) / 2;
+
+    $('.gallery-page .lightbox .lightbox-image').css({
+        "height": imageHeight + "px",
+        "width": imageWidth + "px",
+        "top": offsetTop,
+        "left": offsetLeft
+    });
+
+    $('.gallery-page .lightbox').fadeIn(250);
+};
+
 Template.gallery.events({
-    'click .section-title': function(event) {
-        var header = $(event.target).parent();
-        var arrow = header.find('.fa-caret-up');
-        var photoGrid = header.next();
-        console.log(photoGrid);
-        if (photoGrid.hasClass('expanded')) {
-            arrow.removeClass('rotated');
-            photoGrid.removeClass('expanded');
-            photoGrid.slideUp();
-        } else {
-            arrow.addClass('rotated');
-            photoGrid.addClass('expanded');
-            photoGrid.slideDown();
-        }
+    'click .section-title': function(e) {
+        expandGallery($(e.target));
+    },
+    'click .arrow': function(e) {
+        expandGallery($(e.target));
+    },
+    'click .gallery-image': function(e) {
+        var trigger = $(e.target).parent();
+        var imageUrl = $(trigger).attr('image');
+        lightbox(imageUrl);
+    },
+    'click .lightbox': function(e) {
+        $('.gallery-page .lightbox').fadeOut(250);
     }
 });
