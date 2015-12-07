@@ -3,35 +3,22 @@
         <div class="title">
             Gallery
         </div>
+        {{ #each events }}
         <div class="section-container">
             <div class="section-header">
                 <div class="section-title">
-                    diwali banquet 2013
+                    {{ this.title }}
                 </div>
                 <div class="arrow">
                     <i class="fa fa-caret-up"></i>
                 </div>
             </div>
             <div class="photo-grid">
-                {{ #each diwali }}
+                {{ #each this.photos }}
                     <div class="gallery-image" style="background-image:url('{{ this }}')"></div>
                 {{ /each }}
             </div>
         </div>
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-title">
-                    raas-garba 2013
-                </div>
-                <div class="arrow">
-                    <i class="fa fa-caret-up"></i>
-                </div>
-            </div>
-            <div class="photo-grid">
-                {{ #each raasGarba }}
-                    <div class="gallery-image" style="background-image:url('{{ this }}')"></div>
-                {{ /each }}
-            </div>
-        </div>
+        {{ /each }}
     </div>
 </template>
