@@ -131,15 +131,6 @@ Announcements.attachSchema(new SimpleSchema ({
 	time: orion.attribute('createdAt')
 }));
 
-// function getAlbumTitles() {
-// 	var docs = Albums.find({}).fetch();
-// 	var titles = [];
-// 	for (var i = 0; i < docs.length; i++) {
-// 		titles[i] = (docs[i].title);
-// 	}
-// 	return titles;
-// }
-
 Pictures.attachSchema(new SimpleSchema ({
 	title: {
 		type: String,
