@@ -1,0 +1,91 @@
+.gallery-page {
+    margin: 50px 0;
+    .section-container {
+        margin: 20px 0;
+        .section-header {
+            text-transform: uppercase;
+            user-select: none;
+            font-size: 3rem;
+            cursor: pointer;
+            .section-title {
+                display: inline-block;
+            }
+            .section-description {
+                font-size: 2rem;
+                display: inline-block;
+            }
+            .arrow {
+                display: inline-block;
+                margin-left: 5px;
+            }
+            .rotated {
+                transform: rotate(180deg);
+            }
+        }
+        .photo-grid {
+            @extend .row;
+            display: none;
+            margin: 15px 0;
+            .lightbox-trigger {
+                @extend .col;
+                @extend .col--1-of-4;
+                margin-bottom: $toast-gutter-width;
+                .gallery-image {
+                    height: 190px;
+                    background-position: center top;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    #lightbox {
+        display: none;
+        background: rgba(0, 0, 0, 0.95);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        img.lightbox-image {
+            position: absolute;
+            user-select: none;
+        }
+    }
+}
+
+@media (max-width: 880px) {
+    .gallery-page {
+        .section-container {
+            .photo-grid {
+                .lightbox-trigger {
+                    .gallery-image {
+                        height: 300px;
+                        background-position: center center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .gallery-page {
+        .section-container {
+            .section-header {
+                font-size: 2rem;
+            }
+            .photo-grid {
+                .lightbox-trigger {
+                    .gallery-image {
+                        height: 190px;
+                        background-position: center center;
+                    }
+                }
+            }
+        }
+    }
+}

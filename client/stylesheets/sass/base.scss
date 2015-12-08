@@ -30,6 +30,15 @@ h1 {
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 1rem;
+        user-select: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .page-container {
+        .title {
+            font-size: 5rem;
+        }
     }
 }
 
