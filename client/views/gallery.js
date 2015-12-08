@@ -1,3 +1,11 @@
+Template.gallery.onRendered(function() {
+    startResize();
+});
+
+Template.gallery.onDestroyed(function() {
+    endResize();
+});
+
 Template.gallery.helpers({
     imageUrl: function() {
         return Session.get("imageUrl");
@@ -51,6 +59,25 @@ Template.gallery.helpers({
     ]
 });
 
+Template.gallery.events({
+    'click .section-title': function(e) {
+        expandGallery($(e.target));
+    },
+    'click .arrow': function(e) {
+        expandGallery($(e.target));
+    },
+    'click .gallery-image': function(e) {
+        var trigger = $(e.target).parent();
+        var imageUrl = $(trigger).attr('image');
+        showLightboxWithImage(imageUrl);
+    },
+    'click #lightbox': function(e) {
+        $('#lightbox').fadeOut(250);
+    }
+});
+
+// Gallery Helper Functions
+
 function expandGallery(target) {
     var header = target.parent();
     var arrow = header.find('.fa-caret-up');
@@ -66,10 +93,9 @@ function expandGallery(target) {
     }
 };
 
-function lightbox(imageSrc) {
-    Session.set("imageUrl", imageSrc);
+function sizeImageForLightbox() {
     var currentImage = new Image();
-    currentImage.src = imageSrc;
+    currentImage.src = Session.get("imageUrl");
 
     var imageWidth = currentImage.width;
     var imageHeight = currentImage.height;
@@ -90,29 +116,30 @@ function lightbox(imageSrc) {
     var offsetTop = ($(window).height() - imageHeight) / 2;
     var offsetLeft = ($(window).width() - imageWidth) / 2;
 
-    $('.gallery-page .lightbox .lightbox-image').css({
+    $('#lightbox .lightbox-image').css({
         "height": imageHeight + "px",
         "width": imageWidth + "px",
-        "top": offsetTop,
-        "left": offsetLeft
+        "top": offsetTop + "px",
+        "left": offsetLeft + "px"
     });
-
-    $('.gallery-page .lightbox').fadeIn(250);
 };
 
-Template.gallery.events({
-    'click .section-title': function(e) {
-        expandGallery($(e.target));
-    },
-    'click .arrow': function(e) {
-        expandGallery($(e.target));
-    },
-    'click .gallery-image': function(e) {
-        var trigger = $(e.target).parent();
-        var imageUrl = $(trigger).attr('image');
-        lightbox(imageUrl);
-    },
-    'click .lightbox': function(e) {
-        $('.gallery-page .lightbox').fadeOut(250);
+function showLightboxWithImage(imageSrc) {
+    Session.set("imageUrl", imageSrc);
+    sizeImageForLightbox();
+    $('#lightbox').fadeIn(250);
+};
+
+function shouldResizeImageForLightbox() {
+    if ($('#lightbox').is(':visible')) {
+        sizeImageForLightbox();
     }
-});
+};
+
+function startResize() {
+    $(window).resize(shouldResizeImageForLightbox);
+};
+
+function endResize() {
+    $(window).off("resize", shouldResizeImageForLightbox);
+};
