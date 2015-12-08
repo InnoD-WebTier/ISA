@@ -3,11 +3,25 @@
         <div class="title">
             Gallery
         </div>
-
-<!--	Just code to test that image uploading was working correctly. Can delete. -->
-
-        {{#each gallery}}
-        	<img src="{{this.image.url}}">
-        {{/each}}
+        {{ #each events }}
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-title">
+                    {{ this.title }}
+                </div>
+                <i class="fa fa-caret-up arrow"></i>
+            </div>
+            <div class="photo-grid">
+                {{ #each this.photos }}
+                    <div class="lightbox-trigger" image="{{ this }}">
+                        <div class="gallery-image" style="background-image:url('{{ this }}')"></div>
+                    </div>
+                {{ /each }}
+            </div>
+        </div>
+        {{ /each }}
+        <div id="lightbox">
+            <img class="lightbox-image" src="{{ imageUrl }}">
+        </div>
     </div>
 </template>
