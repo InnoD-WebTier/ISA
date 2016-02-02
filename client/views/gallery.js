@@ -10,6 +10,19 @@ Template.gallery.helpers({
     imageUrl: function() {
         return Session.get("imageUrl");
     },
+
+    // Below is the photo data to render photos on the gallery page. The title field specifies the title of the album, the photo array is a list of links to the
+    // different photos stored in the img/gallery/ directory. To create a new album, simply replicate the current structure e.g.
+    //
+    // {
+    //     title: 'Event name',
+    //     photos: [
+    //       'link1',
+    //       'link2',
+    //       'link3',
+    //     ]
+    // },
+    
     events: [
         {
             title: 'diwali banquet 2013',
