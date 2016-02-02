@@ -7,3 +7,7 @@ Meteor.publish("albums", function () {
 Meteor.publish("pictures", function () {
 	return Pictures.find();
 });
+
+Meteor.publish("blog", function () {
+  return Blog.find();
+});

@@ -14,3 +14,14 @@
         }
     }
 }
+
+#navbar a {
+	border-bottom: 4px solid transparent;
+}
+
+#navbar a:hover {
+	border-bottom: 4px solid #000;
+	background:none;
+	font-weight:300;
+	color:#000;
+}

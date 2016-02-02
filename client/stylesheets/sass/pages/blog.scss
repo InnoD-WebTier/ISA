@@ -1,0 +1,50 @@
+#intro {
+	padding-top:30px;
+	/*height:400px;*/
+	text-align:right;
+}
+
+#posts{
+	padding-top:35px;
+}
+
+.post-name {
+	text-align:right;
+	font-size:20px;
+	font-weight:100;
+	padding-top:20px;
+}
+
+.post-date {
+	text-align:left;
+	font-size:20px;
+	font-weight:100;
+	padding-top:20px;
+}
+
+.post-title {
+	text-align: center;
+	vertical-align: top;
+	color: #07c956;
+
+}
+
+.post-content {
+	font-weight:100 !important;
+	font-family: "Roboto" !important;
+	font-size:22.5px !important;
+  white-space: pre-wrap !important;
+}
+
+.panel {
+	border-color:#fff;
+	padding:30px;
+	padding-top:100px;
+	padding-bottom:80px;
+	border-bottom-color: #ECECEC;
+}
+
+.post-header {
+	font-weight:300;
+	font-size:27.5px;
+}

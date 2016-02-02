@@ -1,3 +1,7 @@
+Meteor.subscribe('albums');
+Meteor.subscribe('pictures');
+Meteor.subscribe('announcements');
+
 ReactiveTemplates.onCreated('collections.announcements.index', function() {
 	this.subscribe('announcements');
 });
@@ -14,27 +18,9 @@ ReactiveTemplates.onCreated('collections.pictures.index', function() {
 	console.log(Pictures.find({}).fetch());
 });
 
-Meteor.subscribe('albums');
-Meteor.subscribe('pictures');
-Meteor.subscribe('announcements');
-// Template.home.onCreated(function() {
-
-// });
-
 Template.home.helpers({
 	announcements: function() {
-		list = [];
 		found = Announcements.find({}).fetch();
-		for (var i = 0; i < found.length; i++) {
-			list[i] = {
-				title: found[i].title,
-				author: found[i].author,
-				entry: found[i].entry,
-				time: found[i].time.toString(),
-				date: found[i].date,
-				location: found[i].location
-			};
-		}
-		return list;
+		return found;
 	}
 });
