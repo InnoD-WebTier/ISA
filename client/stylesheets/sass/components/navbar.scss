@@ -6,13 +6,21 @@
         }
     }
     a {
-        width: 100px;
+        width: 115px;
         &:hover {
             background: none;
             font-weight: 300;
             color: #000;
         }
     }
+}
+
+.dropdown-menu {
+  min-width: 20px !important;
+}
+
+.dropdown-menu a {
+  border-bottom: none !important;
 }
 
 #navbar a {

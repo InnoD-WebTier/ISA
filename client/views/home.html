@@ -14,7 +14,7 @@
                 <hr>
                 <ul id='annoucements'>
 					{{#each announcements}}
-						{{> post}}
+						{{> announcement}}
 					{{/each}}
 				</ul>
             </div>
@@ -35,13 +35,13 @@
 
 </template>
 
-<template name='post'>
+<template name='announcement'>
 	<li>
     <div class="Etitle">
         {{title}}
     </div>
 		<div class="Edate">
-		  {{date}} | {{location}} 
+		  {{date}} | {{location}}
 		</div>
 		<div class="Edescription">
 			{{entry}}

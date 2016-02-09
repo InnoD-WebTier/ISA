@@ -18,6 +18,14 @@ Router.route('/about', function() {
     }
 });
 
+Router.route('/archive', function () {
+  this.render('archive');
+}, {
+  onAfterAction: function() {
+    return setTitle('Archive | ISA');
+  }
+});
+
 Router.route('/blog', function() {
     this.render('blog');
 }, {

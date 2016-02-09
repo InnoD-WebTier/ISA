@@ -1,0 +1,39 @@
+<template name="post">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class= "post-header">
+        <div class= "row">
+          <div class = "col-md-2">
+            <div class = "post-date">
+              <i>{{this.date}}</i>
+            </div>
+          </div>
+          <div class = "col-md-8">
+            <div class = "post-title">
+              {{this.title}}
+            </div>
+          </div>
+          <div class = "col-md-2">
+            <div class = "post-name">
+              <i>{{this.author}}</i>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        <div class="post-content">
+
+  <!--         WARNING
+          This unsafely renders each blog entry. Summernote, the text editor used to write each entry, stores the html code used to create the blog
+          e.g. every time you hit return, it creates a new <p> tag, which gets stored as a string in the database
+
+          You can console.log in /views/blog.js to see this. The triple brackets forces the browser to treat each "<p>" tag as an actual html paragraph tag,
+          instead of as a literal string. Consequently, do not publicize the site login information. A malicious user could use this input field to attack the website
+          by adding a <script></script> to the end of the input. -->
+
+          {{{this.entry}}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

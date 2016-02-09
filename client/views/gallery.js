@@ -22,7 +22,7 @@ Template.gallery.helpers({
     //       'link3',
     //     ]
     // },
-    
+
     events: [
         {
             title: 'diwali banquet 2013',

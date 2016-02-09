@@ -1,0 +1,27 @@
+<template name="archive">
+  <div class="page-container">
+    {{#if showArchive}}
+      ARCHIVE
+    {{else}}
+      <p id="backToArchive">BACK TO ARCHIVE</p>
+    {{/if}}
+  </div>
+  <br>
+  {{#if showArchive}}
+
+    <div class="page-container">
+      {{#each posts}}
+        <p class="archivePost" id="{{this._id}}">{{this.date}} - {{this.title}}</p>
+      {{/each}}
+    </div>
+
+  {{else}}
+
+    <div class="page-container">
+      {{#with archivedPost}}
+        {{> post}}
+      {{/with}}
+    </div>
+
+  {{/if}}
+</template>
