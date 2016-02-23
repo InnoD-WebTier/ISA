@@ -4,6 +4,14 @@
     @include box-sizing(border-box);
 }
 
+b {
+  color: #07c956;
+}
+
+.nobold {
+  font-weight: normal !important;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -13,6 +21,7 @@ body {
 
 a {
     color: #333;
+    text-decoration: none !important;
 }
 
 h1 {

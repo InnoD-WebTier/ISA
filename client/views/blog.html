@@ -1,6 +1,7 @@
 <template name="blog">
   <div class="container">
-    <div class="title">Blog</div>
+    <div class="title blog-header-spacing">Blog</div>
+    <p class="blog-header">Hi! Welcome to our blog. You can find our most recent posts below. If you are interesting in reading some of our <b class="nobold">older posts</b>, you can find our archive <a href="/archive"><b class="nobold">here</b></a>.</p>
     <div id = "posts">
     {{#each posts}}
 		   {{> post}}
