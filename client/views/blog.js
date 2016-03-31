@@ -5,6 +5,17 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.split(search).join(replacement);
 };
 
+Template.blog.onRendered(function() {
+    $("body").css("background-image", 'url(' + 'img/home/backgroundISALarge.png' + ')');
+    $("body").css("background-position", "right");
+    $("body").css("background-attachment", "fixed");
+    $("body").css("background-repeat", "no-repeat");
+});
+
+Template.blog.onDestroyed(function() {
+    $("body").css("background-image", 'none');
+});
+
 Template.blog.helpers({
 	posts: function() {
 		posts = Blog.find({}).fetch();

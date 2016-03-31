@@ -1,9 +1,18 @@
 Template.gallery.onRendered(function() {
     startResize();
+    // background-image: url("img/home/backgroundISALarge.png");
+    // background-position: right;
+    // background-attachment: fixed;
+    // background-repeat: no-repeat;
+    $("body").css("background-image", 'url(' + 'img/home/backgroundISALarge.png' + ')');
+    $("body").css("background-position", "right");
+    $("body").css("background-attachment", "fixed");
+    $("body").css("background-repeat", "no-repeat");
 });
 
 Template.gallery.onDestroyed(function() {
     endResize();
+    $("body").css("background-image", 'none');
 });
 
 Template.gallery.helpers({

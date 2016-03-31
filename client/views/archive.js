@@ -1,5 +1,13 @@
 Template.archive.onRendered(function() {
   Session.set("showArchive", true);
+  $("body").css("background-image", 'url(' + 'img/home/backgroundISALarge.png' + ')');
+  $("body").css("background-position", "right");
+  $("body").css("background-attachment", "fixed");
+  $("body").css("background-repeat", "no-repeat");
+});
+
+Template.archive.onDestroyed(function() {
+    $("body").css("background-image", 'none');
 });
 
 Template.archive.helpers({
